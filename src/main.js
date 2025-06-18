@@ -9,6 +9,7 @@ console.log(inp);
 console.log(res);
 
 let attempts = 10; // attempts to guess the correct number
+let gv = 1;
 
 // random number generation
 const rand = Math.floor(Math.random() * 100 + 1);
@@ -22,14 +23,16 @@ btn.addEventListener("click", (e) => {
 
   res.classList.remove("hidden");
   res.classList.add("block");
-  const guess_heading = document.createElement("h3");
-  guess_heading.innerHTML = "Guess Values";
-  guess_heading.classList.add("text-center");
-  guess_heading.classList.add("mb-5");
-  guess_heading.classList.add("font-bold");
-  console.log(guess_heading);
-
-  res.appendChild(guess_heading);
+  if (gv) {
+    const guess_heading = document.createElement("h3");
+    guess_heading.innerHTML = "Guess Values";
+    guess_heading.classList.add("text-center");
+    guess_heading.classList.add("mb-5");
+    guess_heading.classList.add("font-bold");
+    console.log(guess_heading);
+    res.appendChild(guess_heading);
+    gv = 0;
+  }
 
   if (val === rand) {
     let elem = document.createElement("p");
@@ -37,11 +40,13 @@ btn.addEventListener("click", (e) => {
     res.appendChild(elem);
   } else if (val > rand) {
     let elem = document.createElement("p");
-    elem.innerHTML = `Too large ${val}`;
+    attempts -= 1;
+    elem.innerHTML = `Too large ${val}, Remaining attempts: ${attempts}`;
     res.appendChild(elem);
   } else {
     let elem = document.createElement("p");
-    elem.innerHTML = `Too small ${val}`;
+    attempts -= 1;
+    elem.innerHTML = `Too small ${val} Remaining attempts: ${attempts}`;
     res.appendChild(elem);
   }
   console.log(val);
