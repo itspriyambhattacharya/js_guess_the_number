@@ -31,6 +31,9 @@ btn.addEventListener("click", (e) => {
     guess_heading.classList.add("font-bold");
     console.log(guess_heading);
     res.appendChild(guess_heading);
+    let attempts_msg = document.createElement("p");
+    attempts_msg.innerHTML = `Total Ammenpts: ${attempts}`;
+    res.appendChild(attempts_msg);
     gv = 0;
   }
 
@@ -41,12 +44,12 @@ btn.addEventListener("click", (e) => {
   } else if (val > rand) {
     let elem = document.createElement("p");
     attempts -= 1;
-    elem.innerHTML = `Too large ${val}, Remaining attempts: ${attempts}`;
+    elem.innerHTML = `Too large ${val} <br> Remaining attempts: ${attempts}`;
     res.appendChild(elem);
   } else {
     let elem = document.createElement("p");
     attempts -= 1;
-    elem.innerHTML = `Too small ${val} Remaining attempts: ${attempts}`;
+    elem.innerHTML = `Too small ${val} <br> Remaining attempts: ${attempts}`;
     res.appendChild(elem);
   }
   console.log(val);
