@@ -15,12 +15,24 @@ console.log(`The random number generated is: ${rand}`);
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   let val = inp.value;
+  val = Number(val);
+  console.log(typeof val); // to check the datatype of val
+
   res.classList.remove("hidden");
   res.classList.add("block");
 
   if (val === rand) {
     let elem = document.createElement("p");
     elem.innerHTML = "Successfull guess";
+    res.appendChild(elem);
+  } else if (val > rand) {
+    let elem = document.createElement("p");
+    elem.innerHTML = `Too large ${val}`;
+    res.appendChild(elem);
+  } else {
+    let elem = document.createElement("p");
+    elem.innerHTML = `Too small ${val}`;
+    res.appendChild(elem);
   }
   console.log(val);
 });
