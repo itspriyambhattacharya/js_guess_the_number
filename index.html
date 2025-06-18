@@ -6,28 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Number</title>
   </head>
-  <body class="bg-blue-100">
-    <main>
-      <h1 class="text-center my-3 text-2xl font-bold text-orange-500">
-        Guess the Number
-      </h1>
-      <section
-        class="container mx-auto my-3 px-5 py-3 rounded-lg bg-emerald-300 w-2xs"
+  <body
+    class="bg-blue-100 min-h-screen flex flex-col justify-center items-center"
+  >
+    <main class="w-full max-w-md px-6">
+      <h1
+        class="text-center text-4xl font-extrabold text-orange-600 my-6 drop-shadow-md"
       >
+        🎯 Guess the Number 🎯
+      </h1>
+
+      <section class="bg-emerald-200 p-6 rounded-xl shadow-lg">
         <form action="./index.html" method="post">
-          <div id="guess-div" class="flex flex-col">
-            <label for="guess" class="text-center">Enter Guess</label>
+          <div id="guess-div" class="flex flex-col mb-4">
+            <label for="guess" class="text-lg font-semibold text-center"
+              >Enter Your Guess</label
+            >
             <input
               type="number"
               name="guess"
               id="guess"
-              class="border border-black border-solid rounded-md"
+              placeholder="1 to 100"
+              class="mt-2 border border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
             />
           </div>
-          <div id="submit-btn" class="flex justify-center items-center mt-4">
+          <div id="submit-btn" class="flex justify-center">
             <button
               type="button"
-              class="bg-blue-700 rounded-lg text-white px-3 py-1 cursor-pointer"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition duration-300"
             >
               Submit
             </button>
@@ -35,12 +41,10 @@
         </form>
       </section>
 
-      <!-- Rest showing section start -->
       <section
         id="result-sec"
-        class="container mx-auto my-3 px-5 py-3 rounded-lg bg-emerald-300 w-2xs hidden"
+        class="mt-5 p-4 w-full max-w-md bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded-md shadow hidden transition-all duration-500"
       ></section>
-      <!-- Rest showing section end -->
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>
