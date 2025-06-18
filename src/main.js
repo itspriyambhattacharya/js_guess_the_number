@@ -8,7 +8,7 @@ console.log(btn);
 console.log(inp);
 console.log(res);
 
-let attempts = 10; // attempts to guess the correct number
+let attempts = 3; // attempts to guess the correct number
 let gv = 1;
 let fl = 0;
 
@@ -18,6 +18,9 @@ console.log(`The random number generated is: ${rand}`);
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
+  if (fl) {
+    return;
+  }
   let val = inp.value;
   val = Number(val);
   console.log(typeof val); // to check the datatype of val
@@ -41,7 +44,10 @@ btn.addEventListener("click", (e) => {
   if (val === rand) {
     let elem = document.createElement("p");
     elem.innerHTML = "Successfull guess";
+    btn.disabled = true;
+    inp.disabled = true;
     res.appendChild(elem);
+    fl = 1;
   } else if (val > rand) {
     let elem = document.createElement("p");
     attempts -= 1;
@@ -56,6 +62,8 @@ btn.addEventListener("click", (e) => {
   if (attempts === 0) {
     let elem = document.createElement("p");
     elem.innerHTML = `You Loose`;
+    btn.disabled = true;
+    inp.disabled = true;
     res.appendChild(elem);
     fl = 1;
   }
