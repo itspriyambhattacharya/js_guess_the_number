@@ -4,17 +4,12 @@ const btn = document.querySelector("#submit-btn > button");
 const inp = document.querySelector(`input[type="number"`);
 const res = document.querySelector("#result-sec");
 
-console.log(btn);
-console.log(inp);
-console.log(res);
-
 let attempts = 3; // attempts to guess the correct number
 let gv = 1;
 let fl = 0;
 
 // random number generation
 const rand = Math.floor(Math.random() * 100 + 1);
-console.log(`The random number generated is: ${rand}`);
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -23,7 +18,6 @@ btn.addEventListener("click", (e) => {
   }
   let val = inp.value;
   val = Number(val);
-  console.log(typeof val); // to check the datatype of val
 
   res.classList.remove("hidden");
   res.classList.add("block");
@@ -33,7 +27,6 @@ btn.addEventListener("click", (e) => {
     guess_heading.classList.add("text-center");
     guess_heading.classList.add("mb-5");
     guess_heading.classList.add("font-bold");
-    console.log(guess_heading);
     res.appendChild(guess_heading);
     let attempts_msg = document.createElement("p");
     attempts_msg.innerHTML = `Total Ammenpts: ${attempts}`;
