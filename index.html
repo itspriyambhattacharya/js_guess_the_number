@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Number</title>
   </head>
-  <body>
+  <body class="bg-blue-100">
     <main>
       <h1 class="text-center my-3 text-2xl font-bold text-orange-500">
         Guess the Number
       </h1>
       <section
-        class="container my-3 px-3 border-2 border-blue-700 border-solid"
+        class="container mx-auto my-3 p-3 rounded-lg bg-emerald-300 w-2xs"
       >
-        <form action="./index.html" method="post" class="my-3">
-          <div id="guess-div">
-            <label for="guess">Enter Guess: </label>
-            <input type="number" name="guess" id="guess" />
+        <form action="./index.html" method="post">
+          <div id="guess-div" class="flex flex-col">
+            <label for="guess" class="text-center">Enter Guess</label>
+            <input
+              type="number"
+              name="guess"
+              id="guess"
+              class="border border-black border-solid"
+            />
           </div>
-          <div id="submit-btn" class="flex justify-center items-center">
+          <div id="submit-btn" class="flex justify-center items-center mt-4">
             <button
               type="submit"
-              class="bg-blue-700 rounded-lg text-white px-3 py-1"
+              class="bg-blue-700 rounded-lg text-white px-3 py-1 cursor-pointer"
             >
               Submit
             </button>
