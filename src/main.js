@@ -20,6 +20,14 @@ btn.addEventListener("click", (e) => {
 
   res.classList.remove("hidden");
   res.classList.add("block");
+  const guess_heading = document.createElement("h3");
+  guess_heading.innerHTML = "Guess Values";
+  guess_heading.classList.add("text-center");
+  guess_heading.classList.add("mb-5");
+  guess_heading.classList.add("font-bold");
+  console.log(guess_heading);
+
+  res.appendChild(guess_heading);
 
   if (val === rand) {
     let elem = document.createElement("p");
