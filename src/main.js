@@ -8,6 +8,8 @@ console.log(btn);
 console.log(inp);
 console.log(res);
 
+let attempts = 10; // attempts to guess the correct number
+
 // random number generation
 const rand = Math.floor(Math.random() * 100 + 1);
 console.log(`The random number generated is: ${rand}`);
