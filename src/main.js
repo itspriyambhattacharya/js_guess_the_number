@@ -10,6 +10,7 @@ console.log(res);
 
 let attempts = 10; // attempts to guess the correct number
 let gv = 1;
+let fl = 0;
 
 // random number generation
 const rand = Math.floor(Math.random() * 100 + 1);
@@ -52,5 +53,10 @@ btn.addEventListener("click", (e) => {
     elem.innerHTML = `Too small ${val} <br> Remaining attempts: ${attempts}`;
     res.appendChild(elem);
   }
-  console.log(val);
+  if (attempts === 0) {
+    let elem = document.createElement("p");
+    elem.innerHTML = `You Loose`;
+    res.appendChild(elem);
+    fl = 1;
+  }
 });
