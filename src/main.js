@@ -4,7 +4,7 @@ const btn = document.querySelector("#submit-btn > button");
 const inp = document.querySelector(`input[type="number"`);
 const res = document.querySelector("#result-sec");
 
-let attempts = 3; // attempts to guess the correct number
+let attempts = 10; // attempts to guess the correct number
 let gv = 1;
 let fl = 0;
 
@@ -29,7 +29,7 @@ btn.addEventListener("click", (e) => {
     guess_heading.classList.add("font-bold");
     res.appendChild(guess_heading);
     let attempts_msg = document.createElement("p");
-    attempts_msg.innerHTML = `Total Ammenpts: ${attempts}`;
+    attempts_msg.innerHTML = `Total Attempts: ${attempts}`;
     res.appendChild(attempts_msg);
     gv = 0;
   }
